@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Emit Styles from JS</title>
+
+    <script type="application/javascript">
+      function init() {
+        // Create our stylesheet
+        var style = document.createElement('style');
+        style.innerHTML =
+          'button {' +
+          'color: white;' +
+          'background-color: red!important;' +
+          '}';
+
+        var ref = document.querySelector('script');
+
+        ref.parentNode.insertBefore(style, ref);
+      }
+    </script>
+</head>
+<body onload="init()">
+<h1>Hello World</h1>
+<button id="secret-button">Button</button>
+</body>
+</html>
